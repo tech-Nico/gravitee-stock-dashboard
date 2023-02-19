@@ -10,11 +10,6 @@ import {
     GridValueGetterParams,
     GridRenderCellParams,
     GridRowModel,
-    GridCellEditStopParams,
-    GridCellEditStopReasons,
-    MuiEvent,
-    GridCellEditStartParams,
-    GridCellEditStartReasons
     } from '@mui/x-data-grid';
 // When using TypeScript 4.x and above
 import type {} from '@mui/x-data-grid/themeAugmentation';
@@ -31,8 +26,6 @@ import useWebSocket, { ReadyState } from 'react-use-websocket';
 import { CustomFooterStatusComponent } from './CustomFooterStatusComponent';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import Sell from '@mui/icons-material/Sell';
-import { sync } from 'resolve';
-import { alignProperty } from '@mui/material/styles/cssUtils';
 
 const rows: GridRowsProp = [];
 
@@ -42,7 +35,7 @@ const getSelectedBackgroundColor = (color: string, mode: string) => mode === 'da
 const getSelectedHoverBackgroundColor = (color: string, mode: string) => mode === 'dark' ? darken(color, 0.4) : lighten(color, 0.4);
 
 const calcVariation = (newPrice: number, oldPrice: number) : number => {
-  return (newPrice == oldPrice? 0.0 : ((newPrice - oldPrice) / oldPrice) * 100);
+  return (newPrice === oldPrice? 0.0 : ((newPrice - oldPrice) / oldPrice) * 100);
 }
 
 const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
@@ -132,7 +125,6 @@ export default function StockDashboard() {
   const [isError,         setIsError]         = React.useState(false);
   const [errorMessage,    setErrorMessage]    = React.useState("")
   const [isSaved,         setIsSaved]         = React.useState(false);
-  const [stockUpdate,     setStockUpdate]     = React.useState({} as any);
   const {lastMessage,     readyState }        = useWebSocket(asyncURL, {
     retryOnError: true,
     reconnectAttempts: 10,
@@ -226,7 +218,7 @@ export default function StockDashboard() {
       //return response;
       setIsSaved(true);
       return newRow;
-    }, [stockUpdate, syncURL]);
+    }, [syncURL]);
   
 
   

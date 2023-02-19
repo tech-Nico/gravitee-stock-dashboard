@@ -1,5 +1,4 @@
-import { Grid } from '@mui/material';
-import { Box, Stack } from '@mui/system';
+import { Grid, Stack } from '@mui/material';
 import React from 'react';
 import './App.css';
 import StockDashboard from './components/StockDashboard';
