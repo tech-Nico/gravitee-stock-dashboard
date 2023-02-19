@@ -1,0 +1,1162 @@
+{
+	"info": {
+		"_postman_id": "7f67d6d1-555a-4006-b8ea-5a7cb581475d",
+		"name": "Stock Dashboard Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18416741"
+	},
+	"item": [
+		{
+			"name": "01 - Push stock prices to Kafka via HTTP POST",
+			"item": [
+				{
+					"name": "Kafka",
+					"item": [
+						{
+							"name": "Post Requests",
+							"item": [
+								{
+									"name": "AAPL",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(149, 151, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"AAPL\",\n    \"name\": \"Apple Inc. Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 1.881\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "MSFT",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(270, 272, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"MSFT\",\n    \"name\": \"Microsoft Corporation Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 3.124\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GOOG",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(94, 96, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"GOOG\",\n    \"name\": \"Alphabet Inc. Class C Capital Stock\",\n    \"price\": {{price}},\n    \"variation\": 0.148\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GOOGL",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(94, 95, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"GOOGL\",\n    \"name\": \"Alphabet Inc. Class A Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 0.042\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AMZN",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(98, 100, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"AMZ\",\n    \"name\": \"Amazon.com, Inc. Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 1.977\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PCAR",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(72, 74, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"PCAR\",\n    \"name\": \"PACCAR Inc. Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 0.357\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BRK/A",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(87, 89, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"BRK/A\",\n    \"name\": \"Berkshire Hathaway Inc.\",\n    \"price\": {{price}},\n    \"variation\": 0.90\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BRK/B",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(312, 314, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"BRK/B\",\n    \"name\": \"Berskshire Hathaway Inc.\",\n    \"price\": {{price}},\n    \"variation\": 1.242\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "TSLA",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(193, 195, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"TSLA\",\n    \"name\": \"Tesla, Inc. Common Stock\",\n    \"price\": {{price}},\n    \"variation\": -1.143\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "NVDA",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(216, 218, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"NVDA\",\n    \"name\": \"NVIDIA Corporation Common Stock\",\n    \"price\": {{price}},\n    \"variation\": 2.459\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "TSM",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(95, 97, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"TSM\",\n    \"name\": \"Taiwan Semiconductor Manifacturing Company Ltd.\",\n    \"price\": {{price}},\n    \"variation\": 0.776\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Visa",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const price = _.random(227, 229, true)",
+													"pm.collectionVariables.set(\"price\", price);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketName\": \"V\",\n    \"name\": \"Visa Inc.\",\n    \"price\": {{price}},\n    \"variation\": 1.68\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_host}}/stock/update",
+											"host": [
+												"{{gateway_host}}"
+											],
+											"path": [
+												"stock",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Create API",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"api\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Data Ingestion to Kafka\",\n    \"apiVersion\": \"1.0\",\n    \"definitionVersion\": \"4.0.0\",\n    \"type\": \"async\",\n    \"description\": \"Data Ingestion to Kafka\",\n    \"listeners\": [\n        {\n            \"type\": \"http\",\n            \"paths\": [\n                {\n                    \"path\": \"/stock/update\"\n                }\n            ],\n            \"entrypoints\": [\n                {\n                    \"type\": \"http-post\",\n                    \"configuration\": {\n                        \"requestHeadersToMessage\": false\n                    }\n                }\n            ]\n        }\n    ],\n    \"endpointGroups\": [\n        {\n            \"name\": \"default-group\",\n            \"type\": \"kafka\",\n            \"endpoints\": [\n                {\n                    \"name\": \"default\",\n                    \"type\": \"kafka\",\n                    \"weight\": 1,\n                    \"inheritConfiguration\": false,\n                    \"configuration\": {\n                        \"bootstrapServers\": \"kafka:9092\",\n                        \"topics\" : [\"stocks\"],\n                        \"consumer\" : {\n                            \"enabled\": false\n                        },\n                        \"producer\": {\n                            \"enabled\": true\n                        }\n                    }\n                }\n            ]\n        }\n    ],\n    \"flows\": [\n        {\n            \"name\": \"\",\n            \"selectors\": [],\n            \"request\": [],\n            \"response\": [],\n            \"subscribe\": [],\n            \"publish\": [],\n            \"enabled\": true\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create keyless plan",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"plan\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Keyless\",\n    \"description\":\"Keyless\",\n    \"characteristics\":[],\n    \"security\": {\n        \"type\": \"key-less\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										"plans"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish plan",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans/{{plan}}/_publish",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										"plans",
+										"{{plan}}",
+										"_publish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Start API",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/?action=start",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "start"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "02 - Consume live stock prices via WebSocket",
+			"item": [
+				{
+					"name": "Create API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"api\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{management_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{management_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Event Consumption - Websocket\",\n    \"apiVersion\": \"1.0\",\n    \"definitionVersion\": \"4.0.0\",\n    \"type\": \"async\",\n    \"description\": \"Event Consumption - Websocket\",\n    \"listeners\": [\n        {\n            \"type\": \"http\",\n            \"paths\": [\n                {\n                    \"path\": \"/stock/live/ws\"\n                }\n            ],\n            \"entrypoints\": [\n                {\n                    \"type\": \"websocket\",\n                    \"configuration\": {\n                        \"publisher\": {\n                            \"enabled\": true\n                        },\n                        \"subscriber\": {\n                            \"enabled\": true\n                        }\n                    }\n                }\n            ]\n        }\n    ],\n    \"endpointGroups\": [\n        {\n            \"name\": \"default-group\",\n            \"type\": \"kafka\",\n            \"endpoints\": [\n                {\n                    \"name\": \"default\",\n                    \"type\": \"kafka\",\n                    \"weight\": 1,\n                    \"inheritConfiguration\": false,\n                    \"configuration\": {\n                        \"bootstrapServers\": \"kafka:9092\", \n                        \"topics\" : [\"stocks\"],\n                        \"consumer\" : {\n                            \"enabled\": true,\n                            \"autoOffsetReset\": \"earliest\"\n                        },\n                        \"producer\" : {\n                            \"enabled\": false\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/",
+							"host": [
+								"{{management_host}}"
+							],
+							"path": [
+								"management",
+								"organizations",
+								"DEFAULT",
+								"environments",
+								"DEFAULT",
+								"v4",
+								"apis",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create keyless plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"plan\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{management_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{management_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Keyless\",\n    \"description\":\"Keyless\",\n    \"characteristics\":[],\n    \"security\": {\n        \"type\": \"key-less\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans",
+							"host": [
+								"{{management_host}}"
+							],
+							"path": [
+								"management",
+								"organizations",
+								"DEFAULT",
+								"environments",
+								"DEFAULT",
+								"v4",
+								"apis",
+								"{{api}}",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish plan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{management_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{management_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans/{{plan}}/_publish",
+							"host": [
+								"{{management_host}}"
+							],
+							"path": [
+								"management",
+								"organizations",
+								"DEFAULT",
+								"environments",
+								"DEFAULT",
+								"v4",
+								"apis",
+								"{{api}}",
+								"plans",
+								"{{plan}}",
+								"_publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start API",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{management_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{management_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/?action=start",
+							"host": [
+								"{{management_host}}"
+							],
+							"path": [
+								"management",
+								"organizations",
+								"DEFAULT",
+								"environments",
+								"DEFAULT",
+								"v4",
+								"apis",
+								"{{api}}",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "start"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 - Consume live stock prices via SSE",
+			"item": [
+				{
+					"name": "Kafka",
+					"item": [
+						{
+							"name": "Create API",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"api\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Event Consumption - SSE\",\n    \"apiVersion\": \"1.0\",\n    \"definitionVersion\": \"4.0.0\",\n    \"type\": \"async\",\n    \"description\": \"Event Consumption - SSE\",\n    \"listeners\": [\n        {\n            \"type\": \"http\",\n            \"paths\": [\n                {\n                    \"path\": \"/stock/live/sse\"\n                }\n            ],\n            \"entrypoints\": [\n                {\n                    \"type\": \"sse\",\n                    \"configuration\": {\n                        \"heartbeatIntervalInMs\": 5000,\n                        \"metadataAsComment\": false,\n                        \"headersAsComment\": false\n                    }\n                }\n            ]\n        }\n    ],\n    \"endpointGroups\": [\n        {\n            \"name\": \"default-group\",\n            \"type\": \"kafka\",\n            \"endpoints\": [\n                {\n                    \"name\": \"default\",\n                    \"type\": \"kafka\",\n                    \"weight\": 1,\n                    \"inheritConfiguration\": false,\n                    \"configuration\": {\n                        \"bootstrapServers\": \"kafka:9092\",\n                        \"topics\": [\"stocks\"],\n                        \"consumer\": {\n                            \"autoOffsetReset\": \"earliest\"\n                        },\n                        \"producer\": {\n                            \"enabled\": false\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create keyless plan",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"plan\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Keyless\",\n    \"description\":\"Keyless\",\n    \"characteristics\":[],\n    \"security\": {\n        \"type\": \"key-less\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										"plans"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish plan",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/plans/{{plan}}/_publish",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										"plans",
+										"{{plan}}",
+										"_publish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Start API",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{management_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{management_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/{{api}}/?action=start",
+									"host": [
+										"{{management_host}}"
+									],
+									"path": [
+										"management",
+										"organizations",
+										"DEFAULT",
+										"environments",
+										"DEFAULT",
+										"v4",
+										"apis",
+										"{{api}}",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "start"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "price",
+			"value": ""
+		}
+	]
+}

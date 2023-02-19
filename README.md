@@ -1,5 +1,19 @@
-# Getting Started with Create React App
+# Gravitee Stock Dashboard
 
+## Introduction
+Gravitee Stock Dashboard is a simple client application who's main purpose is to showcase the capabilities of the Gravitee Event-Native API Management.
+
+The concept is very simple.
+
+The application expects 2 URLs to be specified:
+- WebSocket URL: This URL will be used to listen to stock prices and update the dashboard with new prices
+- REST URL: This URL will be used by the dashboard to sell/buy stocks. To keep things simple, selling and buying lead to the same outcome: a change in price
+
+These APIs will be built in Gravitee by specifying a common endpoint: Kafka. Specifically they will both point to the same Kafka topic.
+
+When consumed by many people using a common Kafka topic, this application will show how Gravitee is able to stream messages in realtime to all consumers!
+
+# How to install/run
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
